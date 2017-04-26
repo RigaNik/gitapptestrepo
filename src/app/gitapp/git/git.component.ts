@@ -14,6 +14,7 @@ export class GitComponent implements OnInit {
 
   public result: Repo[] = [];
   public localResults: Object[] = [];
+
   constructor(private _gitService: GitService, private _router: Router) {
   }
 
@@ -35,7 +36,7 @@ export class GitComponent implements OnInit {
   }
 
   private getLocal(){
-    for(var key in window.localStorage){
+    for(let key in window.localStorage){
       if(key.indexOf('repo') != -1){
         this.localResults.push(JSON.parse(window.localStorage.getItem(key)));
       }

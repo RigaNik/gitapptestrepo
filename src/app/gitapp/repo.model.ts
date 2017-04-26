@@ -12,7 +12,7 @@ export class Repo {
   watchers: string;
   clone_url: string;
   constructor(id: number, name: string, stars: number, creationDate: string, owner: string, avatar: string,
-              fullname: string, description: string, language: string, forks: string, watchers: string, clone_url: string
+              fullname: string, description: string, language: string, forks: string, watchers: string, clone_url: string,
   ) {
     this.id = id;
     this.name = name;

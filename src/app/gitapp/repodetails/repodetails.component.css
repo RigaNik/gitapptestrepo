@@ -2,3 +2,7 @@
   max-height: 250px;
   overflow: scroll;
 }
+img{
+  width: 64px;
+  margin-right: 10px;
+}
