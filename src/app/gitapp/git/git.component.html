@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-sm-offset-3 col-sm-6 col-xs-12">
+    <div class="search-form">
+      <div class="form-group">
+        <label for="search_field">Search for repository: </label>
+        <input type="search" class="form-control" id="search_field" placeholder="Search" #search>
+      </div>
+      <button class="btn btn-primary" (click)="searchGit(search.value)">Search</button>
+    </div>
+    <div *ngIf="result.length < 1">
+      <p>Saved repos</p>
+      <ul class="list-group">
+        <li *ngFor="let item of localResults" class="clearfix list-group-item">
+          <div class="pull-left">
+            <h3 (click)="onSelect(item)">{{item.name}}</h3>
+            <h5>{{item.owner}}</h5>
+          </div>
+          <div class="pull-right">
+            <p>{{item.creationDate | date}}</p>
+            <p>Stars: {{item.stars}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <ul class="list-group">
+      <li *ngFor="let item of result" class="list-group-item clearfix">
+        <div class="pull-left">
+          <h3 (click)="onSelect(item)">{{item.name}}</h3>
+          <h5>{{item.owner}}</h5>
+        </div>
+        <div class="pull-right">
+          <p>{{item.creationDate | date}}</p>
+          <p>Stars: {{item.stars}}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

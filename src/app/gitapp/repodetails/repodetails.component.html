@@ -1,0 +1,69 @@
+<!--<p>{{repoDetails | json}}</p>-->
+
+<div class="page-header">
+  <h1>{{repoDetails?.fullname}}</h1>
+</div>
+<div class="row">
+  <div class="col-sm-4 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Repo info</div>
+      <div class="panel-body">
+        <p>Title: {{repoDetails?.name}}</p>
+        <p>Description: {{repoDetails?.description}}</p>
+        <p>Owner: {{repoDetails?.owner}}</p>
+        <p>Language: {{repoDetails?.language}}</p>
+        <button class="btn btn-primary" (click)="saveRepo(repoDetails)">Save repo</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Repo info</div>
+      <div class="panel-body">
+        <p> Stars: {{repoDetails?.stars}}</p>
+        <p> Forks: {{repoDetails?.forks}}</p>
+        <p> Watchers: {{repoDetails?.watchers}}</p>
+        <p> Clone url: {{repoDetails?.clone_url}}</p>
+        <button class="btn btn-info" (click)="backToHome()">Back</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Branches</div>
+      <div class="panel-body">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let item of branches | async">
+            {{item.name}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Last 5 issues</div>
+      <div class="panel-body">
+        <div class="list-group">
+          <a *ngFor="let item of issues" class="list-group-item" href="{{item.url}}">
+            {{item.title}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Last 5 commits</div>
+      <div class="panel-body">
+        <div class="list-group">
+          <a *ngFor="let item of commits" class="list-group-item" href="{{item.url}}">
+            {{item.title}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
