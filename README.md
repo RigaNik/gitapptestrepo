@@ -1,9 +1,9 @@
 # Steps to take:
 
--`git clone https://github.com/RigaNik/gitapptestrepo.git`
--`cd gitapptestrepo`
--`npm install`
--`ng serve`
+* `git clone https://github.com/RigaNik/gitapptestrepo.git`
+* `cd gitapptestrepo`
+* `npm install`
+* `ng serve`
 
 Required to have angular cli installed or if required, i can provide dist version.
 
