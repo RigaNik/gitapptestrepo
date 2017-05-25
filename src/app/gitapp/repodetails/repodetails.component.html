@@ -14,7 +14,7 @@
         <p>Description: {{repoDetails?.description}}</p>
         <p>Owner: {{repoDetails?.owner}}</p>
         <p>Language: {{repoDetails?.language}}</p>
-        <button class="btn btn-primary" (click)="saveRepo(repoDetails)">Save repo</button>
+        <button class="btn btn-primary" (click)="saveRepo(repoDetails)">{{this.saved ? 'Remove from storage' : 'Add to storage'}}</button>
       </div>
     </div>
   </div>

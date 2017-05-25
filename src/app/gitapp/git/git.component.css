@@ -1,14 +1,15 @@
-ul{
-  list-style: none;
-  padding: 0;
-  margin: 0;
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 ul li {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin: 10px 0;
+	border: 1px solid #ccc;
+	padding: 15px;
+	margin: 10px 0;
 }
 
 h3{
-  cursor: pointer;
+	cursor: pointer;
+	margin: 0;
 }

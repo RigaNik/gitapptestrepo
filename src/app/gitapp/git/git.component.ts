@@ -24,7 +24,7 @@ export class GitComponent implements OnInit {
 
   public clearLocalCache() {
     window.localStorage.clear();
-    this.ngOnInit();
+    this.localResults = [];
   }
 
   public searchGit(search: string) {
