@@ -6,9 +6,10 @@
         <input type="search" class="form-control" id="search_field" placeholder="Search" #search>
       </div>
       <button class="btn btn-primary" (click)="searchGit(search.value)">Search</button>
+      <button class="btn btn-primary" (click)="localResults = []; this.clearLocalCache()">Clear Results</button>
     </div>
     <div *ngIf="result.length < 1">
-      <p>Saved repos</p>
+      <p *ngIf="localResults.length > 0">Saved repos</p>
       <ul class="list-group">
         <li *ngFor="let item of localResults" class="clearfix list-group-item">
           <div class="pull-left">
