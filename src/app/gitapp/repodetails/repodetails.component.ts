@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {GitService} from "../git.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {Repo} from "../repo.model";
-import {Issue} from "../issue.model";
-import {Commit} from "../commit.model";
-import {Observable} from "rxjs/Observable";
+import { Component, OnInit } from '@angular/core';
+import { GitService } from "../git.service";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Repo } from "../repo.model";
+import { Issue } from "../issue.model";
+import { Commit } from "../commit.model";
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'app-repodetails',

@@ -3,12 +3,14 @@
     <div class="search-form clearfix">
       <div class="form-group">
         <label for="search_field">Search for repository: </label>
-        <input type="search" class="form-control" id="search_field" placeholder="Press enter to submit.." #search (keyup.enter)="searchGit(search.value)">
+        <input type="search" class="form-control" id="search_field" placeholder="Press enter to submit.." #search (keyup.enter)="this.searchGit(search.value)">
       </div>
-      <h4 *ngIf="localResults.length > 0" class="pull-left">Saved repos</h4>
-      <button class="btn btn-primary pull-right" (click)="this.clearLocalCache()" *ngIf="this.localResults.length > 0">Clear Results</button>
+      <div *ngIf="!this.result.length && this.localResults.length">
+        <h4 class="pull-left">Saved repos</h4>
+        <button class="btn btn-primary pull-right" (click)="this.clearLocalCache()">Clear Results</button>
+      </div>
     </div>
-    <div *ngIf="result.length != 1">
+    <div *ngIf="!this.result.length && this.localResults.length">
       <ul class="list-group">
         <li *ngFor="let item of localResults" class="clearfix list-group-item">
           <div class="pull-left">
@@ -23,9 +25,9 @@
       </ul>
     </div>
     <ul class="list-group">
-      <li *ngFor="let item of result" class="list-group-item clearfix" >
+      <li *ngFor="let item of this.result" class="list-group-item clearfix" >
         <div class="pull-left">
-          <h3 (click)="onSelect(item)">{{item.name}}</h3>
+          <h3 (click)="this.onSelect(item)">{{item.name}}</h3>
           <h5>{{item.owner}}</h5>
         </div>
         <div class="pull-right">

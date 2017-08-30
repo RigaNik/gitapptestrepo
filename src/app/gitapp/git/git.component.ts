@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {GitService} from '../git.service';
 // import {Observable} from "rxjs/Observable";
-import {Repo} from "../repo.model";
-import {Router} from "@angular/router";
+import { Repo } from "../repo.model";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -28,6 +28,7 @@ export class GitComponent implements OnInit {
   }
 
   public searchGit(search: string) {
+    this.result = [];
     this._gitService.getRepos(search).subscribe(data =>
       data.items.forEach(item => {
         let list_item = new Repo(item.id, item.name, item.stargazers_count, item.created_at, item.owner.login, item.owner.avatar_url, item.full_name, item.description, item.language, item.forks, item.watchers, item.clone_url);
